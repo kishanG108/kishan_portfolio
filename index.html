@@ -121,12 +121,6 @@
 
       }
     }
-
-    /* background-image: url("https://t4.ftcdn.net/jpg/02/18/89/83/360_F_218898398_wnLuoR9GY4qhLB2tc7o3tSJbQCRfq0xc.jpg"); */
-    /* background-image: url("");  */
-
-
-
     header {
       display: grid;
       float: right;
@@ -153,42 +147,42 @@
 
     }
 
-    .about {
+    #about {
       background-color: rgba(119, 113, 241, 0.145);
       margin: 10%;
       padding: 5%;
-      border-radius: 6px;
+      border-radius: 3vw;
     }
 
-    .about:hover {
+    #about:hover {
       background-color: rgba(143, 94, 29, 0.303);
       border: 3px solid rgb(216, 198, 198);
       box-shadow: 0px 1px 10px 1px white;
     }
 
-    .skills {
+    #skills {
       background-color: rgba(119, 113, 241, 0.126);
       margin: 10%;
       padding: 5%;
-      border-radius: 6px;
+      border-radius: 3vw;
 
     }
 
-    .skills:hover {
+    #skills:hover {
       background-color: rgba(143, 94, 29, 0.303);
       box-shadow: 0px 1px 10px 1px white;
       border: 3px solid rgb(216, 198, 198);
     }
 
-    .contact {
+    #contact {
       background-color: rgba(119, 113, 241, 0.126);
-      border-radius: 6px;
+      border-radius: 3vw;
       margin: 10%;
       padding: 5%;
 
     }
 
-    .contact:hover {
+    #contact:hover {
       background-color: rgba(143, 94, 29, 0.303);
       border: 3px solid rgb(216, 198, 198);
       box-shadow: 0px 1px 10px 1px white;
@@ -204,7 +198,6 @@
       width: 4vw;
       height: 4vw;
       margin-left: 3vw;
-      /* margin-right: 3vw; */
     }
 
     .media:hover {
@@ -233,10 +226,10 @@
             alt="">
         </div>
         <ul class="menu-area">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <!-- <li><a href="#">Portfolio</a></li> -->
-          <li><a href="#">Contact</a></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">SKILLS</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -259,7 +252,7 @@
     <br>
     <br>
     <main>
-      <section class="about">
+      <section id="about">
         <h2 style="color:rgb(251, 187, 27);">Basic information about me</h2>
         <hr>
         <h5>EDUCATION</h5>
@@ -272,11 +265,11 @@
         <h5>HOBBIES</h5>
         <h7>I like to play chess in my free time.</h7>
       </section>
-      <section class="skills">
-        <h1 style="color:rgb(251, 187, 27);">MY SKILLS</h1>
+      <section id="skills">
+        <h2 style="color:rgb(251, 187, 27);">MY SKILLS</h2>
         <hr>
         <ul>
-          <h2>Coding Languages</h2>
+          <h3>Coding Languages</h3>
           <div class="languages">
             <img class="lang" src="https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_960_720.png" alt="">
 
@@ -290,14 +283,14 @@
           </div>
         </ul>
         <ul>
-          <h5>
+          <h4>
             <li>DATA STRUCTURE</li>
           </h5>
         </ul>
       </section>
 
-      <section class="contact">
-        <h1 style="color: rgb(251, 187, 27);">GET IN TOUCH</h1>
+      <section id="contact">
+        <h2 style="color: rgb(251, 187, 27);">GET IN TOUCH</h2>
         <hr>
         <div class="links">
           <a target="_blank" href="https://github.com/kishanG108">
@@ -327,6 +320,19 @@
       <p style="color: rgb(73, 101, 101);">Copyright &copy; 2023 KISHAN GUPTA </p>
     </footer>
   </div>
+  <script>
+const navLinks = document.querySelectorAll('.menu-area a');
+navLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault(); 
+    const targetSection = link.getAttribute('href');
+    document.querySelector(targetSection).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
+</script>
+  
 </body>
 
 </html>
